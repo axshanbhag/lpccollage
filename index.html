@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LPC Collage</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Trebuchet MS', sans-serif;
+      background: #aa2c2c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .allboxes {
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      grid-template-rows: repeat(3, 200px);
+      gap: 15px;
+      position: relative;
+    }
+
+    .boxes {
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .box1 { 
+        background-image: url("https://www.laspositascollege.edu/honors/IMG_3982.jpg"); 
+    }
+    .box2 { 
+        background-image: url("https://laspositascollege.edu/.ldp-gallery/.private_ldp/a169468/production/master/611b9119-47e9-47e0-9e83-6e62637a9f0e.jpg"); 
+        grid-row: span 2; 
+    }
+    .box3 { 
+        background-image: url("https://wheelsbus.com/wp-content/uploads/2021/12/Route-10-Dublin-Pleasanton-BART-5@2x.png"); 
+    }
+    .box4 { 
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiu1RdmfNPmE6Btjs4kx7HNpjaok4Mhp4HcA&s"); 
+        grid-row: span 2; 
+    }
+    .box5 { 
+        background-image: url("https://flintbuilders.com/wp-content/uploads/2023/08/3_IMAGE_LAS-POSITAS-edited.jpg"); 
+    }
+    .box6 { 
+        background-image: url("https://www.tvrop.org/cms/lib/CA49000002/Centricity/ModuleInstance/1529/large/IMG_6042.jpeg?rnd=0.671843925803827"); 
+        grid-row: span 2; 
+    }
+    .box7 { 
+        background-image: url("https://www.campusce.net/laspositas/configuration/laspositas/img/course-buttons.jpg"); 
+    }
+    .box8 { 
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18vOpr0jVr8S3PdkljOXwz9d5bLRP9iJ02A&s"); 
+    }
+    .box9 { 
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWHElpNNH8HPJv8YNFeV9LzNtJLYkq05Ei7wOPgidwgm4oruoTaANuWX_bIAMiYb2MDOU&usqp=CAU"); 
+    }
+
+    .centerbox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px 50px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .center-box h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="allboxes">
+    <div class="boxes box1"></div>
+    <div class="boxes box2"></div>
+    <div class="boxes box3"></div>
+    <div class="boxes box4"></div>
+    <div class="boxes box5"></div>
+    <div class="boxes box6"></div>
+    <div class="boxes box7"></div>
+    <div class="boxes box8"></div>
+    <div class="boxes box9"></div>
+
+    <div class="centerbox">
+      <h1>Las Positas College</h1>
+    </div>
+  </div>
+</body>
+</html>
