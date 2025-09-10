@@ -2,97 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>LPC Collage</title>
+  <title>LPC Honors Journal</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Trebuchet MS', sans-serif;
-      background: #aa2c2c;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .allboxes {
-      display: grid;
-      grid-template-columns: repeat(4, 200px);
-      grid-template-rows: repeat(3, 200px);
-      gap: 15px;
-      position: relative;
-    }
-
-    .boxes {
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    
-    .box1 { 
-        background-image: url("https://www.laspositascollege.edu/honors/IMG_3982.jpg"); 
-    }
-    .box2 { 
-        background-image: url("https://laspositascollege.edu/.ldp-gallery/.private_ldp/a169468/production/master/611b9119-47e9-47e0-9e83-6e62637a9f0e.jpg"); 
-        grid-row: span 2; 
-    }
-    .box3 { 
-        background-image: url("https://wheelsbus.com/wp-content/uploads/2021/12/Route-10-Dublin-Pleasanton-BART-5@2x.png"); 
-    }
-    .box4 { 
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiu1RdmfNPmE6Btjs4kx7HNpjaok4Mhp4HcA&s"); 
-        grid-row: span 2; 
-    }
-    .box5 { 
-        background-image: url("https://flintbuilders.com/wp-content/uploads/2023/08/3_IMAGE_LAS-POSITAS-edited.jpg"); 
-    }
-    .box6 { 
-        background-image: url("https://www.tvrop.org/cms/lib/CA49000002/Centricity/ModuleInstance/1529/large/IMG_6042.jpeg?rnd=0.671843925803827"); 
-        grid-row: span 2; 
-    }
-    .box7 { 
-        background-image: url("https://www.campusce.net/laspositas/configuration/laspositas/img/course-buttons.jpg"); 
-    }
-    .box8 { 
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ18vOpr0jVr8S3PdkljOXwz9d5bLRP9iJ02A&s"); 
-    }
-    .box9 { 
-        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWHElpNNH8HPJv8YNFeV9LzNtJLYkq05Ei7wOPgidwgm4oruoTaANuWX_bIAMiYb2MDOU&usqp=CAU"); 
-    }
-
-    .centerbox {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      padding: 30px 50px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .center-box h1 {
-      margin: 0;
-      font-size: 2rem;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9f9f9;
       color: #333;
+    }
+
+    header {
+      background: #8B0000;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+    }
+
+    .article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .article .content {
+      padding: 20px;
+    }
+
+    .article h3 {
+      font-family: 'Merriweather', serif;
+      margin: 0 0 10px;
+      color: #8B0000;
+    }
+
+    .article p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="allboxes">
-    <div class="boxes box1"></div>
-    <div class="boxes box2"></div>
-    <div class="boxes box3"></div>
-    <div class="boxes box4"></div>
-    <div class="boxes box5"></div>
-    <div class="boxes box6"></div>
-    <div class="boxes box7"></div>
-    <div class="boxes box8"></div>
-    <div class="boxes box9"></div>
+  <header>
+    <h1>LPC Honors Journal</h1>
+    <p>Collaboration with LPC Honors Program & Media Studies</p>
+  </header>
 
-    <div class="centerbox">
-      <h1>Las Positas College</h1>
+  <section class="articles">
+    <div class="article">
+      <img src="https://www.laspositascollege.edu/honors/images/spring2025/lpc_symposium_audience.jpg">
+      <div class="content">
+        <h3>Ways to Conduct Research</h3>
+        <p>How to Discover Ideas, find passions, and make a change.</p>
+      </div>
     </div>
-  </div>
+
+    <div class="article">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQHsWFAfJV_YEQ/feedshare-shrink_800/B56ZaAFgExHUAg-/0/1745905649135?e=2147483647&v=beta&t=MPg1UTjua0RjHbInamgoKKCsrAX-a6mscVqbKqoAnOE">
+      <div class="content">
+        <h3>Honors Research Symposium Recap</h3>
+        <p>Over 20+ Honors LPC Students attended! Find out more here.</p>
+      </div>
+
+    </div>
+    <div class="article">
+      <img src="https://www.laspositascollege.edu/honors/images/spring2025/symposium2024_presenters.jpg">
+      <div class="content">
+        <h3>How to Sign Up for Honors Program</h3>
+        <p>Are you interested in conducting research with your professor? This is the best way to do it.</p>
+      </div>
+
+    </div>
+    <div class="article">
+      <img src="https://www.laspositascollege.edu/honors/IMG_3621.jpg">
+      <div class="content">
+        <h3>-</h3>
+        <p>-</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://www.laspositascollege.edu/honors/images/spring2025/liza_symposium2024.jpg">
+      <div class="content">
+        <h3>-</h3>
+        <p>-</p>
+      </div>
+    </div>
+
+    <div class="article">
+      <img src="https://media.licdn.com/dms/image/v2/D4E22AQF7fvWa04GcJQ/feedshare-shrink_800/B4EZcjN8iUHYAg-/0/1748642549955?e=2147483647&v=beta&t=DO-a3d3ZH_33rvKIUNfZRATpsAuxx41RAQ1u9_aSJA8">
+      <div class="content">
+        <h3>-</h3>
+        <p>-</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
