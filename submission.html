@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submission</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    nav {
+      background: black;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 0;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    header {
+      background: #8B0000;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .submission-form {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .submission-form h2 {
+      font-family: 'Merriweather', serif;
+      color: #8B0000;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input, textarea {
+      width: 98%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input[type="file"] {
+      padding: 5px;
+    }
+
+    button {
+      background: #8B0000;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #600000;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="title">LPC Honors Journal</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">Submit</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Submit Your Work</h1>
+    <p>For the LPC Journal for Honors Publications</p>
+  </header>
+
+  <div class="container">
+    <h2>Submission Form</h2>
+    <form>
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Your Name">
+      </div>
+
+      <div>
+        <label for="email">Email Address (preferably zonemail)</label>
+        <input type="email" id="email" placeholder="example@zonemail.clpccd.edu">
+      </div>
+
+      <div>
+        <label for="title">Paper Title</label>
+        <input type="text" id="title" placeholder="Enter your paper title">
+      </div>
+
+      <div>
+        <label for="abstract">Abstract</label>
+        <textarea id="abstract" placeholder="Write a short abstract... (approximately 100 words)"></textarea>
+      </div>
+
+      <div>
+        <label for="file">Upload Paper</label>
+        <input type="file" id="file">
+      </div>
+
+      <button type="submit">Submit Paper</button>
+    </form>
+  </div>
+</body>
+</html>
