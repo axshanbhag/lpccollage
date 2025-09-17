@@ -23,13 +23,11 @@
       top: 0;
       z-index: 1000;
     }
-
     nav .title {
       font-family: 'Merriweather', serif;
       font-size: 1.5rem;
       font-weight: bold;
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -37,7 +35,6 @@
       margin: 0;
       padding: 0;
     }
-
     nav ul li a {
       color: #fff;
       text-decoration: none;
@@ -45,7 +42,6 @@
       padding: 5px 0;
       position: relative;
     }
-
     nav ul li a::after {
       content: "";
       position: absolute;
@@ -56,7 +52,6 @@
       background: #fff;
       transition: width 0.3s;
     }
-
     nav ul li a:hover::after {
       width: 100%;
     }
@@ -74,45 +69,30 @@
       text-align: center;
       padding: 50px 20px;
     }
-
     header h1 {
       margin: 0;
       font-family: 'Merriweather', serif;
       font-size: 2.5rem;
     }
-
     header p {
       margin-top: 10px;
       font-size: 1.1rem;
     }
-
-    .submission-form {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
     .submission-form h2 {
       font-family: 'Merriweather', serif;
       color: #8B0000;
       margin-bottom: 20px;
     }
-
     form {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-
     label {
       font-weight: bold;
       margin-bottom: 5px;
       display: block;
     }
-
     input, textarea {
       width: 98%;
       padding: 12px;
@@ -121,16 +101,13 @@
       font-size: 1rem;
       font-family: inherit;
     }
-
     textarea {
       resize: vertical;
       min-height: 120px;
     }
-
     input[type="file"] {
       padding: 5px;
     }
-
     button {
       background: #8B0000;
       color: #fff;
@@ -141,22 +118,16 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     button:hover {
       background: #600000;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
-      }
-    }
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -177,34 +148,101 @@
 
   <div class="container">
     <h2>Submission Form</h2>
-    <form>
+    <form id="submissionForm" novalidate>
       <div>
         <label for="name">Full Name</label>
         <input type="text" id="name" placeholder="Your Name">
+        <div class="error" id="nameError"></div>
+      </div>
+
+      <div>
+        <label for="wnumber">W# (only numbers)</label>
+        <input type="text" id="wnumber" class="wnumber" placeholder="Enter your 8-digit W#">
+        <div class="error" id="wnumberError"></div>
       </div>
 
       <div>
         <label for="email">Email Address (preferably zonemail)</label>
         <input type="email" id="email" placeholder="example@zonemail.clpccd.edu">
+        <div class="error" id="emailError"></div>
       </div>
 
       <div>
         <label for="title">Paper Title</label>
         <input type="text" id="title" placeholder="Enter your paper title">
+        <div class="error" id="titleError"></div>
       </div>
 
       <div>
         <label for="abstract">Abstract</label>
         <textarea id="abstract" placeholder="Write a short abstract... (approximately 100 words)"></textarea>
+        <div class="error" id="abstractError"></div>
       </div>
 
       <div>
-        <label for="file">Upload Paper</label>
+        <label for="file">Upload Paper (PDF only)</label>
         <input type="file" id="file">
+        <div class="error" id="fileError"></div>
       </div>
 
       <button type="submit">Submit Paper</button>
     </form>
   </div>
+
+  <script>
+    const form = document.getElementById("submissionForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      let isValid = true;
+
+      document.querySelectorAll(".error").forEach(e => e.textContent = "");
+
+      const name = document.getElementById("name").value.trim();
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        isValid = false;
+      }
+      const wnumber = document.getElementById("wnumber").value.trim();
+      const wnumberPattern = /^\d{8}$/; // Exactly 8 digits
+      if (!wnumberPattern.test(wnumber)) {
+        document.getElementById("wnumberError").textContent = "W# must be exactly 8 digits (0-9).";
+        isValid = false;
+      }
+      const email = document.getElementById("email").value.trim();
+      const emailPattern = /^[^@]+@zonemail\.clpccd\.edu$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Please use a valid zonemail address.";
+        isValid = false;
+      }
+
+      const title = document.getElementById("title").value.trim();
+      if (title === "") {
+        document.getElementById("titleError").textContent = "Paper title is required.";
+        isValid = false;
+      }
+
+      const abstract = document.getElementById("abstract").value.trim();
+      if (abstract.length < 50) {
+        document.getElementById("abstractError").textContent = "Abstract should be at least 50 characters.";
+        isValid = false;
+      }
+
+      const fileInput = document.getElementById("file");
+      const file = fileInput.files[0];
+      if (!file) {
+        document.getElementById("fileError").textContent = "Please upload your paper.";
+        isValid = false;
+      } else if (!file.name.endsWith(".pdf")) {
+        document.getElementById("fileError").textContent = "Only PDF files are allowed.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+  </script>
 </body>
 </html>
