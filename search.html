@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    nav {
+      background: #8B0000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      padding: 8px 0;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    header h1 {
+      font-family: 'Merriweather', serif;
+      color: #8B0000;
+    }
+
+    .search-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    #searchInput {
+      width: 60%;
+      max-width: 400px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 15px;
+    }
+
+    .card h3 {
+      font-family: 'Merriweather', serif;
+      margin: 0 0 10px;
+      color: #8B0000;
+    }
+    .card h4 {
+      font-family: 'Merriweather', serif;
+      margin: 0 0 10px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">LPC Honors Journal</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Papers</a></li>
+      <li><a href="#">Submit</a></li>
+      <li><a href="#">Contact</a></li>
+       <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Explore Papers</h1>
+    <p>Find Honors student-written research and publications</p>
+    <p>Papers found from the 15th Annual Community College Honors Research Symposium 2025</p>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search publications...">
+  </div>
+
+<section class="articles" id="articleList">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Stagnogley.JPG">
+    <div class="content">
+      <h3>Bugging the Soil</h3>
+      <h4><i>By: Rebecca Lee</i></h4>
+      <h4><i>Mentor: Aliana Nguyen</i></h4>
+      <p>Investigates detritivores' role in extricating toxic heavy metals
+      and aerating soil to enhance soil productivity.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8HFGJUsxm0JgZHfmFMvYx8jqwpVUc4DSZaw&s">
+    <div class="content">
+      <h3>"Is This Okay?"</h3>
+      <h4><i>By: Mattea Gutierrez</i></h4>
+      <h4><i>Mentor: Meghan Swanson</i></h4>
+      <p>An analysis of how Asian American filmmakers depict
+matriarchal authority, filial piety, and generational trauma.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://www.thecoinrepublic.com/wp-content/uploads/2025/08/1SlSy3GZ1KbnI5_05aKST3_6v7HWFplqi-768x432.jpeg">
+    <div class="content">
+      <h3>Decoding Bitcoin Trends</h3>
+      <h4><i>By: Sidhant Parashar</i></h4>
+      <h4><i>Mentor: Howard Blumenfeld</i></h4>
+      <p>Applying custom calculus-based derivations of price, volume,
+and other market factors to uncover profitable trading
+opportunities.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://knowledge.wharton.upenn.edu/wp-content/uploads/2018/01/green-vs-coal-900x387.jpg">
+    <div class="content">
+      <h3>Geospatial Image Analysis</h3>
+      <h4><i>By: Pavan Siddharth Kosuru</i></h4>
+      <h4><i>Mentor: Caterina Pentcheva</i></h4>
+      <p>A comparative statistical analysis of the effects of wind and coal
+power plants on astronomical visibility utilizing data from
+calculated light pollution maps.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://news.cornell.edu/sites/default/files/styles/story_thumbnail_xlarge/public/0621_venus2_0.jpg?itok=3P5MWl_z">
+    <div class="content">
+      <h3>Revolutionizing Exoplanet Habitability</h3>
+      <h4><i>By: Aisha Gupta & Daniel Zhang</i></h4>
+      <h4><i>Mentor: Eric Harpell</i></h4>
+      <p>Develops a Habitability Transit Score using mathematical
+modeling to solve real-world dataset limitations and analyze
+extrasolar habitability potential.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://gppreview.com/wp-content/uploads/2020/07/GPPR2-1.jpg">
+    <div class="content">
+      <h3>Better Dead Than Diagnosed?</h3>
+      <h4><i>By: Rifa Sipal</i></h4>
+      <h4><i>Mentor: Robin Roy</i></h4>
+      <p>Studies how social stigmas in India shape attitudes towards
+seeking mental health care.</p>
+    </div>
+  </div>
+</section>
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const articles = document.querySelectorAll(".card");
+
+    searchInput.addEventListener("keyup", function() {
+      const filter = searchInput.value.toLowerCase();
+      articles.forEach(article => {
+        const text = article.innerText.toLowerCase();
+        article.style.display = text.includes(filter) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
