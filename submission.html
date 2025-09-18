@@ -168,6 +168,18 @@
       </div>
 
       <div>
+        <label for="course">Course</label>
+        <input type="text" id="course" placeholder="Honors Course Name">
+        <div class="error" id="courseError"></div>
+      </div>
+
+      <div>
+        <label for="crnnumber">CRN (only numbers)</label>
+        <input type="text" id="crnnumber" class="crnnumber" placeholder="Enter your honor's course CRN">
+        <div class="error" id="crnnumberError"></div>
+      </div>
+
+      <div>
         <label for="title">Paper Title</label>
         <input type="text" id="title" placeholder="Enter your paper title">
         <div class="error" id="titleError"></div>
@@ -177,12 +189,6 @@
         <label for="abstract">Abstract</label>
         <textarea id="abstract" placeholder="Write a short abstract... (approximately 100 words)"></textarea>
         <div class="error" id="abstractError"></div>
-      </div>
-
-      <div>
-        <label for="course">Course</label>
-        <input type="text" id="course" placeholder="Honors Course">
-        <div class="error" id="courseError"></div>
       </div>
 
       <div>
@@ -210,9 +216,15 @@
         isValid = false;
       }
       const wnumber = document.getElementById("wnumber").value.trim();
-      const wnumberPattern = /^\d{8}$/; // Exactly 8 digits
+      const wnumberPattern = /^\d{8}$/;
       if (!wnumberPattern.test(wnumber)) {
         document.getElementById("wnumberError").textContent = "W# must be exactly 8 digits (0-9).";
+        isValid = false;
+      }
+      const crnnumber = document.getElementById("crnnumber").value.trim();
+      const crnnumberPattern = /^\d{5}$/;
+      if (!wnumberPattern.test(crnnumber)) {
+        document.getElementById("crnnumberError").textContent = "CRN must be exactly 5 digits (0-9).";
         isValid = false;
       }
       const email = document.getElementById("email").value.trim();
