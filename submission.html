@@ -180,6 +180,12 @@
       </div>
 
       <div>
+        <label for="course">Course</label>
+        <input type="text" id="course" placeholder="Honors Course">
+        <div class="error" id="courseError"></div>
+      </div>
+
+      <div>
         <label for="file">Upload Paper (PDF only)</label>
         <input type="file" id="file">
         <div class="error" id="fileError"></div>
@@ -225,6 +231,11 @@
       const abstract = document.getElementById("abstract").value.trim();
       if (abstract.length < 50) {
         document.getElementById("abstractError").textContent = "Abstract should be at least 50 characters.";
+        isValid = false;
+      }
+      const course = document.getElementById("course").value.trim();
+      if (course === "") {
+        document.getElementById("courseError").textContent = "Course is required.";
         isValid = false;
       }
 
